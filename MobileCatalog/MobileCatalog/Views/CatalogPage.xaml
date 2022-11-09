@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileCatalog.Views.CatalogPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <SearchBar HorizontalTextAlignment="Center"
+                               FontSize="Medium" FontAttributes="Italic" TextChanged="SearchBar_TextChanged"/>
+        <Label x:Name="header" Text="Поиск по:" FontSize="Small"/>
+        <Picker x:Name="picker">
+            <Picker.Items>
+                <x:String>Code</x:String>
+                <x:String>Name</x:String>
+                <x:String>BarCode</x:String>
+                <x:String>Price</x:String>
+            </Picker.Items>
+        </Picker>
+        <CollectionView x:Name="collectionView"
+                    Margin="20"
+                    SelectionMode="Single"
+                    SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                               ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="Price:"/>
+                        <Label Text="{Binding Price}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Code:"/>
+                        <Label Text="{Binding Code}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Name:"/>
+                        <Label Text="{Binding Name}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="BarCode:"/>
+                        <Label Text="{Binding BarCode}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Quantity:"/>
+                        <Label Text="{Binding Quantity}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Model:"/>
+                        <Label Text="{Binding Model}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Sort:"/>
+                        <Label Text="{Binding Sort}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Color:"/>
+                        <Label Text="{Binding Color}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Size:"/>
+                        <Label Text="{Binding Size}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="Wight:"/>
+                        <Label Text="{Binding Wight}"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                        <Label Text="{Binding DateChanges}"
+                           TextColor="Silver"
+                           FontSize="Small"/>
+                        <Label Text="_________"
+                               FontSize="Medium"
+                               TextColor="Black"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

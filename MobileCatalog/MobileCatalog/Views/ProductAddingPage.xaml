@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobileCatalog;assembly=MobileCatalog"
+             x:Class="MobileCatalog.Views.ProductAddingPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DecimalConverter x:Key="DecimalConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="20">
+                    <Label Text="Price:"/>
+                    <Editor Placeholder="Price"
+                            Text="{Binding Price, Converter={StaticResource DecimalConverter}}" HeightRequest="40"/>
+                    <Label Text="Code:"/>
+                    <Editor Placeholder="Code"
+                            Text="{Binding Code}"
+                            HeightRequest="40"/>
+                    <Label Text="Name:"/>
+                    <Editor Placeholder="Name"
+                            Text="{Binding Name}"
+                            HeightRequest="40"/>
+                    <Label Text="BarCode:"/>
+                    <Editor Placeholder="BarCode"
+                            Text="{Binding BarCode}"
+                            HeightRequest="40"/>
+                    <Label Text="Quantity:"/>
+                    <Editor Placeholder="Quantity"
+                            Text="{Binding Quantity, Converter={StaticResource DecimalConverter}}"
+                            HeightRequest="40"/>
+                    <Label Text="Model:"/>
+                    <Editor Placeholder="Model"
+                            Text="{Binding Model}"
+                            HeightRequest="40"/>
+                    <Label Text="Sort:"/>
+                    <Editor Placeholder="Sort"
+                            Text="{Binding Sort}"
+                            HeightRequest="40"/>
+                    <Label Text="Color:"/>
+                    <Editor Placeholder="Color"
+                            Text="{Binding Color}"
+                            HeightRequest="40"/>
+                    <Label Text="Size:"/>
+                    <Editor Placeholder="Size"
+                            Text="{Binding Size}"
+                            HeightRequest="40"/>
+                    <Label Text="Wight:"/>
+                    <Editor Placeholder="Wight"
+                            Text="{Binding Wight}"
+                            HeightRequest="40"/>
+
+                    <Grid ColumnDefinitions="*,*">
+                        <Button Text="Save"
+                                Clicked="OnSaveButton_Clicked"/>
+                    
+                        <Button Grid.Column="1"
+                                Text="Delete"
+                                Clicked="OnDeleteButton_Clicked"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
